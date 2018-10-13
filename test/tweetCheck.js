@@ -7,9 +7,18 @@ contract("Checker" ,function(accounts){
     })
 
     it("can get tweet" ,async() =>{
-       const tx =  await checkerInstance.getTweet("@example","hi , you are ****.")
+       await checkerInstance.getTweet("@example","hi , you are ****.",{from:accounts[0]})
        //const checkerInstance.tweets()
-       assert.isOk(tx)
+       const newGetTweet = await checkerInstance.tweets(accounts[0], 0)
+       //bytes32で定義したuserIdはUTFに変換すること
+       //変換しない場合：0x406578616d706c65000000000000000000000000000000000000000000000000'
+       //が表示される
+       const tweetContent1 = web3.toUtf8(newGetTweet[0])
+       const tweetContent2 = newGetTweet[1]
+
+       assert.equal(tweetContent1, '@example', 'The content of the new added tweet is not correct')
+       assert.equal(tweetContent2, 'hi , you are ****.', 'The content of the new added tweet is not correct')
+
     })
 
 
