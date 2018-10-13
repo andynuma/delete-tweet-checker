@@ -1,1 +1,2 @@
-save tweet for delete 
+save tweet contract
+200 tweets can save per user.
