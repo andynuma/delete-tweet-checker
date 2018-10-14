@@ -1,2 +1,1 @@
-save tweet contract
-200 tweets can save per user.
+save tweet to the contract,user can save 200 tweets 
