@@ -1,0 +1,29 @@
+{
+  "name": "deleted_tweet_checker",
+  "version": "1.0.0",
+  "description": "save tweet for delete",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "npm run artifacts && next client",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "artifacts": "cp -r ./build/contracts/ ./client/web3/artifacts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andynuma/delete-tweet-checker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andynuma/delete-tweet-checker/issues"
+  },
+  "homepage": "https://github.com/andynuma/delete-tweet-checker#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}
